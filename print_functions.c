@@ -58,15 +58,3 @@ int print_char_string_or_percent(char specifier, va_list args)
 			return (_putchar('%') + _putchar(specifier));
 	}
 }
-/**
- * print_integer - Prints an integer to stdout
- * @args: A va_list containing the arguments to be printed
- * Return: The number of characters printed
- */
-int print_integer(va_list args)
-{
-	/* Your implementation for handling 'd' */
-	/* For now, returning 0 as a placeholder */
-	return (0);
-}
-
