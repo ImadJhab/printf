@@ -54,7 +54,7 @@ int print_char_string_or_percent(char specifier, va_list args)
 		case 'i':
 			return (print_integer(va_arg(args, int)));
 		case 'b':
-			return (print_binary(va_arg(args)))
+			return (print_binary(args));
 
 		default :
 			return (_putchar('%') + _putchar(specifier));
