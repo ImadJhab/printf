@@ -53,7 +53,10 @@ int print_char_string_or_percent(char specifier, va_list args)
 		case 'd':
 		case 'i':
 			return (print_integer(va_arg(args, int)));
-		default:
+		case 'b':
+			return (print_binary(va_arg(args)))
+
+		default :
 			return (_putchar('%') + _putchar(specifier));
 	}
 }
@@ -87,4 +90,39 @@ int print_integer(int n)
 		num += _putchar((n % 10) + 48);
 	}
 	return (num);
+}
+/**
+ * print_binary - Prints a binary number to stdout
+ * @args: A va_list containing the arguments to be printed
+ * Return: The number of characters printed
+ */
+int print_binary(va_list args)
+{
+	unsigned int num = va_arg(args, unsigned int);
+	int count = 0;
+	int binary[32];
+
+	int i;
+
+	for (i = 0; i < 32; i++)
+	{
+		binary[i] = num & 1;
+		num >>= 1;
+	}
+	i = 31;
+	while (i >= 0 && binary[i] == 0)
+		i--;
+
+	if (i < 0)
+	{
+		count += _putchar('0');
+		return (count);
+	}
+
+	for (; i >= 0; i--)
+	{
+		count += _putchar(binary[i] + '0');
+	}
+
+	return (count);
 }
