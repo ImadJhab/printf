@@ -88,3 +88,34 @@ int print_integer(int n)
 	}
 	return (num);
 }
+/**
+ * print_binary - Prints a binary number to stdout
+ * @args: A va_list containing the arguments to be printed
+ * Return: The number of characters printed
+ */
+int print_binary(va_list args)
+{
+	unsigned long int num = va_arg(args, unsigned long int);
+	int count = 0;
+	int binary[64];
+	int i;
+
+	for (i = 0; i < 64; i++)
+	{
+		binary[i] = num & 1;
+		num >>= 1;
+	}
+	i = 31;
+	while (i >= 0 && binary[i] == 0)
+		i--;
+	if (i < 0)
+	{
+		count += _putchar('0');
+		return (count);
+	}
+	for (; i >= 0; i--)
+	{
+		count += _putchar(binary[i] + '0');
+	}
+	return (coun)t;
+}
