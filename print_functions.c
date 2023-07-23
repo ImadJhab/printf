@@ -50,10 +50,6 @@ int print_char_string_or_percent(char specifier, va_list args)
 			return (print_string(args));
 		case '%':
 			return (_putchar('%'));
-		case 'd':
-			return (print_integer(args));
-		case 'i':
-			return (print_integer(args));
 		default:
 			return (_putchar('%') + _putchar(specifier));
 	}
