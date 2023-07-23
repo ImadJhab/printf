@@ -77,6 +77,10 @@ int print_integer(va_list args)
 		}
 		count += print_integer(-n);
 	}
+	else if (n >= 0 && n <= 9)
+	{
+		count += _putchar(n + '0');
+	}
 	else
 	{
 		count += print_integer(n / 10);
@@ -84,7 +88,7 @@ int print_integer(va_list args)
 	}
 
 	return (count);
-	}
+}
 /**
  * print_decimal - Prints a decimal to stdout
  * @args: A va_list containing the arguments to be printed
@@ -94,7 +98,21 @@ int print_decimal(va_list args)
 {
 	int n = va_arg(args, int);
 	int count = 0;
-	/* Implementation for handling 'd' */
-
-	return (count);
+	/* Implementation for handling 'd' (same as print_integer) */
+	if (n < 0)
+	{
+		count += _putchar('-');
+		if (n == -2147483648)
+		{
+			count += _putchar('2');
+			n %= 1000000000;
+		}
+		count += print_decimal(-n);
+		}
+		else
+		{
+			count += print_decimal(n / 10);
+			count += _putchar((n % 10) + '0');
+		}
+		return (count);
 }
