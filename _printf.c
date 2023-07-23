@@ -1,36 +1,38 @@
 #include "main.h"
-
-/* Function definition for _printf */
+/**
+ * _printf - produces output according to a format
+ * @format: format containing characters and specifiers
+ * Return: length of the formatted output string
+ */
 int _printf(const char *format, ...)
 {
-    va_list args;
-    int i = 0;
-    int count = 0;
+	va_list args;
+	int i = 0;
+	int count = 0;
 
-    va_start(args, format);
+	va_start(args, format);
 
-    if (!format || (format[0] == '%' && !format[1]))
-    {
-        return (-1);
-    }
+	if (!format || (format[0] == '%' && !format[1]))
+	{
+		return (-1);
+	}
 
-    while (format[i])
-    {
-        if (format[i] == '%')
-        {
-            i++;
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			count += print_char_string_or_percent(format[i], args);
+		}
+		else
+		{
+			count += _putchar(format[i]);
+		}
 
-            count += print_char_string_or_percent(format[i], args);
-        }
-        else
-        {
-            count += _putchar(format[i]);
-        }
+		i++;
+	}
 
-        i++;
-    }
+	va_end(args);
 
-    va_end(args);
-
-    return count;
+	return (count);
 }
