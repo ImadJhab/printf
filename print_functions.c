@@ -59,7 +59,7 @@ int print_char_string_or_percent(char specifier, va_list args)
 }
 /**
  * print_integer - Prints an integer to stdout
- * @args: A va_list containing the arguments to be printed
+ * @n: integer to be printed
  * Return: The number of characters printed
  */
 int print_integer(int n)
