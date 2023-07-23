@@ -50,7 +50,6 @@ int print_char_string_or_percent(char specifier, va_list args)
 			return (print_string(args));
 		case '%':
 			return (_putchar('%'));
-<<<<<<< HEAD
 		case 'd':
 			return (print_integer(args));
 		case 'i':
@@ -70,18 +69,4 @@ int print_integer(va_list args)
 	/* For now, returning 0 as a placeholder */
 	return (0);
 }
-/**
- * print_decimal - Prints a decimal to stdout
- * @args: A va_list containing the arguments to be printed
- * Return: The number of characters printed
- */
-int print_decimal(va_list args)
-	/*Your implementation for handling 'i' */
-	/* For now, returning 0 as a placeholder */
-	return (0);
-=======
-		default:
-			return (_putchar('%') + _putchar(specifier));
-	}
->>>>>>> f0527a9f1a0eb5d33403b8fabd6fe753753f30ce
-}
+
