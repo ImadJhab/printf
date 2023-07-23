@@ -50,7 +50,51 @@ int print_char_string_or_percent(char specifier, va_list args)
 			return (print_string(args));
 		case '%':
 			return (_putchar('%'));
+		case 'd':
+		case 'i':
+			return (print_integer(args));
 		default:
 			return (_putchar('%') + _putchar(specifier));
 	}
+}
+/**
+ * print_integer - Prints an integer to stdout
+ * @args: A va_list containing the arguments to be printed
+ * Return: The number of characters printed
+ */
+int print_integer(va_list args)
+{
+	int n = va_arg(args, int);
+	int count = 0;
+
+	if (n < 0)
+	{
+		count += _putchar('-');
+		if (n == -2147483648)
+		{
+			count += _putchar('2');
+			n %= 1000000000;
+		}
+		count += print_integer(-n);
+	}
+	else
+	{
+		count += print_integer(n / 10);
+		count += _putchar((n % 10) + '0');
+	}
+
+	return (count);
+	}
+/**
+ * print_decimal - Prints a decimal to stdout
+ * @args: A va_list containing the arguments to be printed
+ * Return: The number of characters printed
+ */
+int print_decimal(va_list args)
+{
+	int n = va_arg(args, int);
+	int count = 0;
+	/* Implementation for handling 'd' */
+
+	return (count);
 }
