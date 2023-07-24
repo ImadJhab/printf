@@ -63,6 +63,8 @@ int print_char_string_or_percent(char specifier, va_list args)
 			return (print_hex(va_arg(args, unsigned int)));
 		case 'X':
 			return (print_HEX(va_arg(args, unsigned int)));
+		case 'R':
+			return (print_rot13(va_arg(args, char *)));
 
 		default:
 			return (_putchar('%') + _putchar(specifier));

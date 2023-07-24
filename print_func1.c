@@ -38,3 +38,34 @@ int print_special_string(char *str)
 
 	return (count);
 }
+/**
+ * print_rot13 - encodes a string using rot13
+ * @c: characters to be printed
+ * Return: a string
+*/
+int print_rot13(char *c)
+{
+	int i;
+	int j;
+	char rot[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char ROT[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+
+	for (j = 0; c[j]; j++)
+	{
+		if (c[j] < 'A' || (c[j] > 'Z' && c[j] < 'a') || c[j] > 'z')
+		{
+			_putchar(c[j]);
+		}
+		else
+		{
+			for (i = 0; i <= 52; i++)
+			{
+				if (c[j] == rot[i])
+				{
+					_putchar(ROT[i]);
+				}
+			}
+		}
+	}
+	return (j);
+}
