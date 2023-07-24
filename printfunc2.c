@@ -48,7 +48,7 @@ int print_hex(unsigned int n)
 	{
 		c += print_hex(n / 16);
 	}
-	else if (n % 16 < 10)
+	if (n % 16 < 10)
 	{
 		c += _putchar((n % 16) + 48);
 	}
@@ -71,7 +71,7 @@ int print_HEX(unsigned int n)
 	{
 		c += print_HEX(n / 16);
 	}
-	else if (n % 16 < 10)
+	if (n % 16 < 10)
 	{
 		c += _putchar((n % 16) + 48);
 	}
