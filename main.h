@@ -16,6 +16,7 @@ int print_octal(unsigned int n);
 int print_hex(unsigned int n);
 int print_HEX(unsigned int n);
 int print_special_string(char *str);
+int print_rev(char *s);
 int print_rot13(char *c);
 
 #endif
