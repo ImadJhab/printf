@@ -22,7 +22,14 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			count += print_char_string_or_percent(format[i], args);
+			if (format[i] == 'S')
+			{
+				count += print_special_string(va_arg(args, char *));
+			}
+			else
+			{
+				count += print_char_string_or_percent(format[i], args);
+			}
 		}
 		else
 		{
