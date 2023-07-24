@@ -55,6 +55,14 @@ int print_char_string_or_percent(char specifier, va_list args)
 			return (print_integer(va_arg(args, int)));
 		case 'b':
 			return (print_binary(args));
+		case 'u':
+			return (print_unsigned_int(va_arg(args, unsigned int)));
+		case 'o':
+			return (print_octal(va_arg(args, unsigned int)));
+		case 'x':
+			return (print_hex(va_arg(args, unsigned int)));
+		case 'X':
+			return (print_HEX(va_arg(args, unsigned int)));
 
 		default:
 			return (_putchar('%') + _putchar(specifier));

@@ -11,7 +11,7 @@ int _printf(const char *format, ...);
 int print_char_string_or_percent(char specifier, va_list args);
 int print_integer(int n);
 int print_binary(va_list args);
-int print_unsigned(unsigned int n);
+int print_unsigned_int(unsigned int n);
 int print_octal(unsigned int n);
 int print_hex(unsigned int n);
 int print_HEX(unsigned int n);
