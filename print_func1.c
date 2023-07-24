@@ -69,3 +69,23 @@ int print_rot13(char *c)
 	}
 	return (j);
 }
+/**
+ * print_rev - prints a string in reverse
+ * @c: string to be printed
+ * Return: reversed string
+*/
+int print_rev(char *c)
+{
+	int j;
+	int i = 0;
+
+	while (c[i] != '\0')
+	{
+		i++;
+	}
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(c[j]);
+	}
+	return (i);
+}
