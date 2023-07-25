@@ -97,7 +97,6 @@ int print_rev(char *c)
 int print_address(void *p)
 {
 	long int i = (unsigned long)(p);
-	char *c;
 
 	register int co = 0;
 
@@ -105,8 +104,7 @@ int print_address(void *p)
 	{
 		return (_puts("(nil)"));
 	}
-	c = convert(i, 16, 1);
 	co += _puts("0x");
-	co += _puts(c);
+	co += convert(i);
 	return (co);
 }

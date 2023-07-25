@@ -2,25 +2,27 @@
 /**
  * convert - converts number, base into string
  * @num: input number
- * @base: input base
- * @lower: flag if hexa values need to be lowercase
  * Return: result
  */
-char *convert(unsigned long int num, int base, int lower)
+int convert(unsigned long num)
 {
-	static char *rp;
-	static char buffer[50];
-	char *ptr;
+	int i = 0;
+	int j;
+	int k;
+	int c = 0;
+	char ar[60];
+	char h[] = "0123456789abcdef";
 
-	rp = (lower)
-		? "0123456789abcdef"
-		: "0123456789ABCDEF";
-	ptr = &buffer[49];
-	*ptr = '\0';
-	do {
-		*--ptr = rp[num % base];
-		num /= base;
-	} while (num != 0);
-
-	return (ptr);
+	while (num)
+	{
+		k = num % 16;
+		ar[i] = k;
+		num = num / 16;
+		i++;
+	}
+	for (j = i - 1; j >= 0; j--)
+	{
+		c += _putchar(h[(int)ar[j]]);
+	}
+	return (c);
 }
