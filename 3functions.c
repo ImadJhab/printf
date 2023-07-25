@@ -98,7 +98,7 @@ int print_address(void *p)
 {
 	long int i = (unsigned long)(p);
 
-	register int co = 0;
+	int co = 0;
 
 	if (!p)
 	{
