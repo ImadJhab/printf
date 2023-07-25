@@ -7,6 +7,7 @@
 #include <unistd.h>
 
 int _putchar(char c);
+int _puts(char *str);
 int _printf(const char *format, ...);
 int print_char_string_or_percent(char specifier, va_list args);
 int print_integer(int n);
@@ -18,5 +19,7 @@ int print_HEX(unsigned int n);
 int print_special_string(char *str);
 int print_rev(char *c);
 int print_rot13(char *c);
+char *convert(unsigned long int num, int base, int lower);
+int print_address(void *p);
 
 #endif
