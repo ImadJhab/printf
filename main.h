@@ -19,7 +19,5 @@ int print_HEX(unsigned int n);
 int print_special_string(char *str);
 int print_rev(char *c);
 int print_rot13(char *c);
-int convert(unsigned long num);
-int print_address(void *p);
 
 #endif

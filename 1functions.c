@@ -67,8 +67,6 @@ int print_char_string_or_percent(char specifier, va_list args)
 			return (print_rot13(va_arg(args, char *)));
 		case 'r':
 			return (print_rev(va_arg(args, char *)));
-		case 'p':
-			return (print_address(va_arg(args, void *)));
 
 		default:
 			return (_putchar('%') + _putchar(specifier));

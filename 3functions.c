@@ -89,22 +89,3 @@ int print_rev(char *c)
 	}
 	return (i);
 }
-/**
- * print_address - prints the address of input
- * @p: address of a pointer
- * Return: number of characters printed
-*/
-int print_address(void *p)
-{
-	long int i = (unsigned long)(p);
-
-	int co = 0;
-
-	if (!p)
-	{
-		return (_puts("(nil)"));
-	}
-	co += _puts("0x");
-	co += convert(i);
-	return (co);
-}
